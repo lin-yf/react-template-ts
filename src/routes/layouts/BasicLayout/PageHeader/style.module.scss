@@ -1,0 +1,52 @@
+@import '../_page';
+
+.pageHeader{
+  height: $pageHeaderHeight;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 1px 4px 1px rgba(0,0,0,.05);
+  .pageHeaderContent{
+    height: $pageHeaderHeight;
+    background-color: $color1;
+    color: $textColor;
+    @include max-screen;
+    .pageHeaderLeft{
+      height: 100%;
+    }
+    .logo{
+      width: $pageLeftSideWidth;
+    }
+    .search{
+      z-index: 3;
+      padding: 7px 0;
+      height: 100%;
+      box-sizing: border-box;
+      font-size: 0;
+      position: relative;
+      color: #333;
+      input {
+        width: 220px;
+        display: inline-block;
+        vertical-align: top;
+        height: 100%;
+        border-radius: 25px 0 0 25px;
+        border: 0;
+        margin: 0;
+        padding: 0 5px 0 16px;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        outline: none;
+        font-size: 11px;
+      }
+    }
+    .pageHeaderRight{
+      height: 100%;
+      flex:1;
+      justify-content: flex-end;
+      .links {
+        font-size: 14px;
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+@import "../page";
+
+.pageRightSideBar {
+  width: 230px;
+  min-width: 230px;
+  padding-right: 8px;
+  @include hide-screen;
+  .toolBar{
+    margin-top: 8px;
+    background-color: #fff;
+  }
+  .cardHeader {
+    // border-top: 2px solid #368cda;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom: 3px solid #2b2d42;
+    margin-top: 8px;
+    background-color: #fff;
+    min-height: 290px;
+    border-bottom-left-radius: unset;
+    border-bottom-right-radius: 0;
+  }
+}

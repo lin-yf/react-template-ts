@@ -1,0 +1,67 @@
+.home {
+  // background-color: #efefef;
+  // min-height: 200vh;
+  margin: 8px;
+  padding-bottom: 32px;
+  &::-webkit-scrollbar {
+    display: none;
+    /* Chrome Safari */
+  }
+
+  scrollbar-width: none;
+  /* firefox */
+  -ms-overflow-style: none;
+  /* IE 10+ */
+  .homeContent {
+    background-color: #fff;
+  }
+  .bread{
+    padding-left: 16px;
+    padding-right: 16px;
+    border-bottom: 1px solid rgb(213, 217, 219);
+    padding-top: 6px;
+    padding-bottom: 6px;
+    font-size: 13px;
+    color: rgb(190, 195, 197);
+  }
+  .contentCard{
+    color: #222;
+    padding: 16px;
+    // padding-bottom: 20px;
+    border-bottom: 1px solid rgb(235, 238, 240);
+    // &:not(:first-child) {
+    //   margin-top: 20px;
+    // }
+    .postContent{
+      color: #596172;
+      font-size: 14px;
+      line-height: 1.5;
+      padding: 10px 0 10px 0;
+    }
+    :global(.post-title) {
+      color: #2b2d42;
+      font-size: 19px;
+    }
+    :global(.post-meta) {
+      color: #888;
+      font-size: 14px;
+      font-weight: 300;
+    }
+    .moreLink {
+      color: #Fff;
+      background-color: #2b2d42;
+      border-radius: 2px;
+      // margin-top: 4px;
+      padding: 5px 12px;
+      font: 12px Tahoma;
+    }
+  }
+
+  .page{
+    margin-top: 8px;
+    padding: 8px;
+    background-color: #fff;
+    background-color: #fff;
+    border-radius: 4px;
+  }
+}

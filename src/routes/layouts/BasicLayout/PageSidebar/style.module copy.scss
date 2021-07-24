@@ -1,0 +1,63 @@
+@import '../page';
+
+.pageSideBar {
+  z-index: 4;
+  transition: all .3s ease-out .1s;
+  width: $pageLeftSideWidth;
+  // height: 600px;
+  // margin-top: 10px;
+  // background-color: rgb(235, 238, 240);
+  // background-color: #f6f7f4;
+  // background-color: #fff;
+  // border-left: 1px solid rgb(235, 238, 240);
+  border-right: 1px solid rgb(235, 238, 240);
+  // background-color: #fff;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  // box-shadow: 0 1px 3px 0 #e3eaefe0, 0 0 0 1px #e1e7ea;
+  // border-radius: 4px;
+  border-left: 1px solid $borderColor;
+  background-color: rgb(250,252,252);
+  .pageSideBarCardbak {
+    margin-top: 8px;
+    // background-color: #fff;
+    // border-top: 2px solid steelblue;
+    min-height: 600px;
+  }
+
+  .pageSideBarCard {
+    margin-top: 8px;
+    background-color: #fff;
+    // border-top: 2px solid steelblue;
+    // min-height: 600px;
+    .profile{
+      img {
+        display: block;
+        margin: 0 auto;
+        max-width: 126px;
+        max-height: 126px;
+        border-radius: 50em;
+      }
+    }
+    .username {
+      color: rgba(10, 10, 10, 0.7);
+      text-align: center;
+      line-height: 40px
+    }
+    .user{
+      width: 100%;
+      border-bottom: 1px solid #ebeef0;
+    }
+    .nav{
+      ul{
+        li{
+          height: 41px;
+          color: #2b2d42;
+          &:hover {
+            background-color: hsla(0,0%,58.8%,.15);
+          }
+        }
+      }
+    }
+  }
+}

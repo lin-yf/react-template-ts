@@ -1,0 +1,65 @@
+@import '../page';
+
+.pageSideBar {
+  z-index: 4;
+  transition: all .3s ease-out .1s;
+  width: $pageLeftSideWidth;
+  // border-right: 1px solid rgb(235, 238, 240);
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  // border-left: 1px solid $borderColor;
+  // background-color: rgb(250,252,252);
+  background-color: #f0f2f5;
+  padding: 8px 0 8px 8px;
+  .pageSideBarCard {
+    // margin-top: 8px;
+    border-radius: 4px;
+    background-color: #fff;
+    // border-bottom: 3px solid #2b2d42;
+    .profile{
+      img {
+        display: block;
+        margin: 0 auto;
+        max-width: 126px;
+        max-height: 126px;
+        border-radius: 50em;
+      }
+    }
+    .username {
+      color: rgba(10, 10, 10, 0.7);
+      text-align: center;
+      line-height: 40px
+    }
+    .user{
+      width: 100%;
+      border-bottom: 1px solid $borderColor;
+      padding: 16px;
+    }
+    .nav{
+      padding-bottom: 16px;
+      padding-top: 16px;
+      ul{
+        li{
+          padding-left: 16px;
+          height: 41px;
+          color: #2b2d42;
+          font-size: 14px;
+          &:hover {
+            background-color: hsla(0,0%,58.8%,.15);
+          }
+        }
+      }
+    }
+  }
+  .setting{
+    margin-top: 8px;
+    background-color: #fff;
+    padding: 8px 16px;
+    border-radius: 4px;
+    ul {
+      li p{
+        font-size: 13px;
+      }
+    }
+  }
+}

@@ -1,0 +1,248 @@
+@keyframes upper {
+
+  0%,
+  19.999%,
+  22%,
+  62.999%,
+  64%,
+  64.999%,
+  70%,
+  100% {
+    opacity: .99;
+    text-shadow: 0 0 80px #ffffff, 0 0 30px #008000, 0 0 6px #0000ff;
+  }
+
+  20%,
+  21.999%,
+  63%,
+  63.999%,
+  65%,
+  69.999% {
+    opacity: 0.4;
+    text-shadow: none;
+  }
+}
+
+@keyframes lower {
+
+  0%,
+  12%,
+  18.999%,
+  23%,
+  31.999%,
+  37%,
+  44.999%,
+  46%,
+  49.999%,
+  51%,
+  58.999%,
+  61%,
+  68.999%,
+  71%,
+  85.999%,
+  96%,
+  100% {
+    opacity: 0.99;
+    text-shadow: 0 0 80px red, 0 0 30px FireBrick, 0 0 6px DarkRed;
+  }
+
+  19%,
+  22.99%,
+  32%,
+  36.999%,
+  45%,
+  45.999%,
+  50%,
+  50.99%,
+  59%,
+  60.999%,
+  69%,
+  70.999%,
+  86%,
+  95.999% {
+    opacity: 0.4;
+    text-shadow: none;
+  }
+}
+
+@import url(https://fonts.googleapis.com/css?family=Monoton);
+
+.counter {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #efefef;
+
+  .label {
+    color: #444;
+    width: 200px;
+  }
+
+  .container {
+    width: 1080px;
+    min-height: 400px;
+    margin-top: 20px;
+  }
+
+  .card {
+    margin-top: 10px;
+    flex: auto;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    min-height: 100px;
+  }
+
+  .btn {
+    position: relative;
+  }
+
+  .tips {
+    position: absolute;
+    top: -7px;
+    right: 0;
+    border-radius: 2px;
+    height: 14px;
+    line-height: 14px;
+    padding: 1px 3px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    font-size: 12px;
+    background: #E63E35;
+    color: #fff;
+
+    &::before {
+      display: block;
+      content: '';
+      border-top-width: 2px;
+      border-bottom-width: 2px;
+      border-left-width: 2px;
+      border-right-width: 2px;
+      border-style: solid;
+      border-color: #E63E35 transparent transparent transparent;
+      position: absolute;
+      left: 4px;
+      top: 14px;
+    }
+  }
+
+  .bg2 {
+    background: linear-gradient(135deg, #333 25%, transparent 25%) -50px 0,
+      linear-gradient(225deg, #333 25%, transparent 25%) -50px 0,
+      linear-gradient(315deg, #333 25%, transparent 25%),
+      linear-gradient(45deg, #333 25%, transparent 25%);
+    background-size: 100px 100px;
+    background-color: #ff8a00;
+    height: 250px;
+  }
+
+  .bg {
+    background-color: #fff;
+    background-image: linear-gradient(45deg,
+        #333 25%,
+        transparent 25%,
+        transparent 75%,
+        #333 75%,
+        #333),
+      linear-gradient(-45deg,
+        #333 25%,
+        transparent 25%,
+        transparent 75%,
+        #333 75%,
+        #333);
+    background-size: 50px 50px;
+    height: 250px;
+  }
+
+  .bg3 {
+    background-image: radial-gradient(#ff8a00 35%, transparent 35%);
+    background-size: 8px 8px;
+    border-radius: 16px;
+    padding: 35px;
+
+    .wrapper {
+      height: 200px;
+      width: 400px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  .dot {
+    display: block;
+    height: 30px;
+    width: 30px;
+    background-color: burlywood;
+  }
+
+  .bg4 {
+    background-image: radial-gradient(circle at 50% 50%, #ddd, #ddd 1px, transparent 1px),
+      radial-gradient(circle at 0 0, #ddd, #ddd 1px, transparent 1px),
+      radial-gradient(circle at 0 100%, #ddd, #ddd 1px, transparent 1px),
+      radial-gradient(circle at 100% 0, #ddd, #ddd 1px, transparent 1px),
+      radial-gradient(circle at 100% 100%, #ddd, #ddd 1px, transparent 1px);
+    background-color: #fff;
+    background-size: 10px 10px;
+
+    .wrapper {
+      padding: 35px;
+      background-image: repeating-linear-gradient(-36deg, #24a38e, #24a38e 5px, transparent 5px, transparent 9px, #24a38e 9px), repeating-linear-gradient(54deg, #24a38e, #24a38e 5px, transparent 5px, transparent 9px, #24a38e 9px), repeating-linear-gradient(144deg, #24a38e, #24a38e 5px, transparent 5px, transparent 9px, #24a38e 9px), repeating-linear-gradient(234deg, #24a38e, #24a38e 5px, transparent 5px, transparent 9px, #24a38e 9px);
+      background-size: 3px 100%, 100% 3px, 3px 100%, 100% 3px;
+      background-position: 0 0, 0 0, 100% 0, 0 100%;
+      background-repeat: no-repeat;
+    }
+  }
+
+  .bg5 {
+    background-color: #111111;
+
+    .wrapper {
+      padding: 40px;
+      font-size: 75px;
+      font-family: 'Monoton', cursive;
+      text-align: center;
+      text-transform: uppercase;
+      text-shadow: 0 0 80px red, 0 0 30px FireBrick, 0 0 6px DarkRed;
+      color: red;
+    }
+
+    .wrapper p {
+      margin: 0;
+    }
+
+    :global(#error) {
+      color: #fff;
+      text-shadow: 0 0 80px #ffffff, 0 0 30px #008000, 0 0 6px #0000ff;
+
+      &:hover {
+        text-shadow: 0 0 200px #ffffff, 0 0 80px #008000, 0 0 6px #0000ff;
+      }
+
+      span {
+        animation: upper 11s linear infinite;
+      }
+    }
+
+    :global(#code) {
+      &:hover {
+        text-shadow: 0 0 100px red, 0 0 40px FireBrick, 0 0 8px DarkRed;
+      }
+
+      span:nth-of-type(2) {
+        animation: lower 10s linear infinite;
+      }
+
+      span:nth-of-type(1) {
+        text-shadow: none;
+        opacity: .4;
+      }
+    }
+  }
+
+  .bg6 {
+  }
+}

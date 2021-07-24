@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["dom","dom.iterable", "esnext"],
+    "declaration": true,
+    "declarationMap": true,
+    "noEmit": true,
+    "jsx": "react",
+    "strict": true,
+    "pretty": true,
+    "sourceMap": true,
+    /* Additional Checks */
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    /* Module Resolution Options */
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "baseUrl": ".",
+    "paths": {
+			"@/*": ["src/*"]
+		}
+  },
+  "include": [
+		"./src/**/*"
+	],
+  "exclude": [
+    "test",
+    "node_modules",
+    "public",
+    "release",
+    "dist",
+    "dll"
+  ]
+}

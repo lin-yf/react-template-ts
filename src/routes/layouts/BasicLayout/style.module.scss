@@ -1,0 +1,35 @@
+@import "./page";
+
+.basicLayout{
+  min-height: 100vh;
+  // padding-top: $pageHeaderHeight;
+  background: linear-gradient(to left bottom, hsl(170, 100%, 85%) 0%,hsl(65, 100%, 85%) 100%);
+  .pageContent{
+    @include max-screen;
+    position: relative;
+    min-height: calc(100vh - #{$pageHeaderHeight});
+    .layoutContentContainer{
+      flex: 1;
+      // border: 1px solid rgb(235, 238, 240);
+      background-color: #fff;
+      height: calc(100vh - #{$pageHeaderHeight});
+      position: relative;
+      overflow: hidden;
+      // border-left: 1px solid $borderColor;
+      border-right: 1px solid $borderColor;
+      .layoutContent {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        background-color: #f0f2f5;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+    }
+  }
+}
