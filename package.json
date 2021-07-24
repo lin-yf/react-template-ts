@@ -123,6 +123,7 @@
     "webpack-merge": "^5.8.0",
     "worker-loader": "^3.0.8"
   },
+  "prepare": "husky install",
   "husky": {
     "hooks": {
       "pre-commit": "yarn lint && git add .",
