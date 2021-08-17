@@ -17,5 +17,6 @@ module.exports = {
   // 自定义别名
   appAlias: {
     '@': resolveApp('src'),
+    'react-dom': '@hot-loader/react-dom',
   },
 };

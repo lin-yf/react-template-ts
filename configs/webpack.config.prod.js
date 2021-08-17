@@ -2,6 +2,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const { merge } = require('webpack-merge');
 const webpackConfig = require('./webpack.config.base.js');
 const { appBuild } = require('./paths');
@@ -14,6 +15,7 @@ module.exports = merge(webpackConfig, {
     filename: 'js/[name].[contenthash:8].js', // 导出的文件名
     chunkFilename: 'js/[name].[contenthash:8].js', // 异步加载模块打包的文件名
     publicPath: '/',
+    assetModuleFilename: 'assets/[hash][ext][query]',
   },
   plugins: [
     new MiniCssExtractPlugin({
@@ -52,6 +54,19 @@ module.exports = merge(webpackConfig, {
 
       // 压缩css
       new CssMinimizerPlugin(),
+      new CopyPlugin({
+        patterns: [
+          {
+            from: '**/*',
+            context: appPublic,
+            globOptions: {
+              dot: true,
+              gitignore: true,
+              ignore: ['**/index.*', '**/ignored-directory/**'],
+            },
+          },
+        ],
+      }),
     ],
   },
   // 警告 webpack 的性能提示

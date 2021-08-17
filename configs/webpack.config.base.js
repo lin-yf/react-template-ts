@@ -1,10 +1,14 @@
 const path = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const svgToMiniDataURI = require('mini-svg-data-uri');
 const { appAlias } = require('./paths');
 const getClientEnvironment = require('./env');
 
 module.exports = {
+  cache: {
+    type: 'filesystem', // 使用文件缓存
+  },
   module: {
     rules: [
       {
@@ -118,24 +122,27 @@ module.exports = {
         ],
       },
       {
-        test: /\.(woff2?|eot|ttf|otf|svg)(\?.*)?$/,
-        loader: 'file-loader',
-        options: {
-          publicPath: './font',
-          outputPath: 'font',
-        },
+        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+        type: 'asset/resource',
       },
       {
         test: /\.(png|jpe?g|gif|svg|eot|ttf|woff|woff2)$/i,
-        loader: 'url-loader',
-        options: {
-          limit: 8192,
+        type: 'asset/resource',
+      },
+      {
+        test: /\.svg/,
+        type: 'asset/inline',
+        generator: {
+          dataUrl: (content) => {
+            content = content.toString();
+            return svgToMiniDataURI(content);
+          },
         },
       },
     ],
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.json', '.ts', '.tsx', 'css', 'scss'],
+    extensions: ['.js', '.jsx', '.json', '.ts', '.tsx', '.css', '.scss'],
     modules: ['node_modules'],
     alias: appAlias,
   },

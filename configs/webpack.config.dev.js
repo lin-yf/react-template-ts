@@ -8,6 +8,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 // const CopyPlugin = require('copy-webpack-plugin');
 const { resolveApp } = require('./paths');
 const baseConfig = require('./webpack.config.base');
+const proxy = require('../src/setProxy');
 
 const port = process.env.PORT || 1212;
 const publicPath = `http://localhost:${port}/`;
@@ -77,5 +78,6 @@ module.exports = merge(baseConfig, {
       disableDotRule: false,
     },
     before() {},
+    proxy: proxy || {}
   },
 });
