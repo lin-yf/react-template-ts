@@ -1,6 +1,5 @@
-import React from 'react';
-import { createRoute } from '../../routes/utils';
-import Home from '../../components/Home/index';
+import Home from '@/components/Home/index';
+import { createRoute } from '@/routes/utils';
 
 const routesConfig = (app: any) => ({
   path: '/home',
