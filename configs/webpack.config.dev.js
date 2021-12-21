@@ -5,21 +5,18 @@ const webpack = require('webpack');
 const { merge } = require('webpack-merge');
 const { spawn, execSync } = require('child_process');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 // const CopyPlugin = require('copy-webpack-plugin');
-const { resolveApp } = require('./paths');
+const { resolveApp, proxySetup } = require('./paths');
 const baseConfig = require('./webpack.config.base');
-const proxy = require('../src/setProxy');
 
 const port = process.env.PORT || 1212;
 const publicPath = `http://localhost:${port}/`;
 
 module.exports = merge(baseConfig, {
-  devtool: 'inline-source-map',
-
+  devtool: 'source-map',
   mode: 'development',
-
   entry: [
-    ...(process.env.PLAIN_HMR ? [] : ['react-hot-loader/patch']),
     `webpack-dev-server/client?http://localhost:${port}/`,
     'webpack/hot/only-dev-server',
     require.resolve('../src/index.tsx'),
@@ -34,11 +31,9 @@ module.exports = merge(baseConfig, {
     rules: [],
   },
   resolve: {
-    alias: {
-      'react-dom': '@hot-loader/react-dom',
-    },
   },
   plugins: [
+    new ReactRefreshWebpackPlugin(),
     new webpack.HotModuleReplacementPlugin({
       multiStep: true,
     }),
@@ -50,7 +45,7 @@ module.exports = merge(baseConfig, {
   ],
   node: {
     __dirname: false,
-    __filename: false,
+    __filename: true,
   },
   infrastructureLogging: {
     level: 'warn',
@@ -77,7 +72,11 @@ module.exports = merge(baseConfig, {
       verbose: true,
       disableDotRule: false,
     },
-    before() {},
-    proxy: proxy || {}
+    before(app) {
+      if (fs.existsSync(proxySetup)) {
+        // This registers user provided middleware for proxy reasons
+        require(proxySetup)(app)
+      }
+    }
   },
 });

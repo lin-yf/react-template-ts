@@ -6,4 +6,4 @@
 - react-redux
 - react-thunk
 - tailwind
-
+- [react-router v6](https://reactrouter.com/docs/en/v6/getting-started/overview#index-routes) 嵌套路由回归

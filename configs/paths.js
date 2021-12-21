@@ -13,6 +13,7 @@ module.exports = {
   appHtml: resolveApp('public/index.html'),
   appPackageJson: resolveApp('package.json'),
   appNodeModules: resolveApp('node_modules'),
+  proxySetup: resolveApp('src/setProxy.js'), // 代理文件
 
   // 自定义别名
   appAlias: {

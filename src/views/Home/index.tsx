@@ -1,5 +1,6 @@
 import React from 'react';
 import cs from 'classnames';
+import { Link } from 'react-router-dom';
 import s from './style.module.scss';
 
 export default function Home() {
@@ -7,13 +8,13 @@ export default function Home() {
     <div className={cs(s.home, 'none-scroll')}>
       <div className={cs(s.homeContent, 'card')}>
         <div className={cs(s.bread)}>
-          <i className="fa fa-home" /> 首页 / 正文
+          <i className="fa fa-home" /> <Link to="/">首页 / 正文</Link>
         </div>
         <div className="container mx-auto">
           {[1, 2, 3, 4, 6].map((item, index) => {
             return (
               <div className={s.contentCard} key={item}>
-                <h2 className="post-title">本博客开始支持 TLS 1.3</h2>
+                <h2 className="post-title">TLS 1.3</h2>
                 <p className="post-meta">
                   <span>posted</span>
                   <span>222</span>

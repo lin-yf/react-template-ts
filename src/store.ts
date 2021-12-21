@@ -1,6 +1,5 @@
 import { configureStore, getDefaultMiddleware, Action } from '@reduxjs/toolkit';
 import { createHashHistory } from 'history';
-import { routerMiddleware } from 'connected-react-router';
 import { createLogger } from 'redux-logger';
 import { ThunkAction } from 'redux-thunk';
 // eslint-disable-next-line import/no-cycle
@@ -10,8 +9,7 @@ export const history = createHashHistory();
 const rootReducer = createRootReducer(history);
 export type RootState = ReturnType<typeof rootReducer>;
 
-const router = routerMiddleware(history);
-const middleware = [...getDefaultMiddleware(), router];
+const middleware = [...getDefaultMiddleware()];
 
 const excludeLoggerEnvs = ['test', 'production'];
 const shouldIncludeLogger = !excludeLoggerEnvs.includes(

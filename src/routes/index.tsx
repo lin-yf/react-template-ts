@@ -1,24 +1,17 @@
-import NotFound from '@/pages/NotFound';
-import AuthLayout from './layouts/AuthLayout';
-import BasicLayout from './layouts/BasicLayout/index';
-import HomePage from '../pages/HomePage';
-import { createRoutes } from './utils';
+import React from 'react';
+import { Provider } from 'react-redux';
+import { useRoutes } from 'react-router-dom';
+import routes from './routes';
+import { configuredStore } from '../store';
 
-const routesConfig = (app: any) => [
-  {
-    path: '/sign',
-    title: '登录',
-    indexRoute: '/sign/login',
-    component: BasicLayout,
-    childRoutes: [],
-  },
-  {
-    path: '/',
-    title: '系统中心',
-    component: AuthLayout,
-    indexRoute: '/dashboard',
-    children: [HomePage(app), NotFound(app)],
-  },
-];
+const AppRoot = () => {
+  const element = useRoutes(routes);
+  const store = configuredStore();
+  return (
+    <Provider store={store}>
+      <>{element}</>
+    </Provider>
+  );
+};
 
-export default (app: any) => createRoutes(app, routesConfig);
+export default AppRoot;
